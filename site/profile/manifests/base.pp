@@ -12,4 +12,18 @@ class profile::base {
 
   Host <<| tag == 'vagranthost' |>>
 
+  # Collect all vagrant sshkeys!
+
+  $vagrantrsakey = $::ssh['rsa']['key']
+
+  @@sshkey { $::fqdn:
+    ensure       => present,
+    host_aliases => [$::hostname,$::ipaddress],
+    key          => $vagrantrsakey,
+    type         => 'ssh-rsa',
+    tag          => ['vagranthost'],
+  }
+
+  Sshkey <<| tag == 'vagranthost' |>>
+
 }
