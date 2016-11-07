@@ -1,5 +1,15 @@
 class profile::base {
 
-  #the base profile should include component modules that will be on all nodes
+  # Collect all vagrant hosts!
+  $vagrantip = $::networking['interfaces']['eth1']['ip']
+
+  @@host { $::fqdn:
+    ensure       => present,
+    host_aliases => [$::hostname],
+    ip           => $vagrantip,
+    tag          => ['vagranthost'],
+  }
+
+  Host <<| tag == 'vagranthost' |>>
 
 }
