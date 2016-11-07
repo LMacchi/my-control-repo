@@ -7,7 +7,7 @@ class profile::base {
     ensure       => present,
     host_aliases => [$::hostname],
     ip           => $vagrantip,
-    tag          => ['vagranthost'],
+    tag          => 'vagranthost',
   }
 
   Host <<| tag == 'vagranthost' |>>
@@ -16,12 +16,12 @@ class profile::base {
 
   $vagrantrsakey = $::ssh['rsa']['key']
 
-  @@sshkey { $::fqdn:
+  @@sshkey { "${::fqdn}-rsa":
     ensure       => present,
     host_aliases => [$::hostname,$::ipaddress],
     key          => $vagrantrsakey,
     type         => 'ssh-rsa',
-    tag          => ['vagranthost'],
+    tag          => 'vagranthost',
   }
 
   Sshkey <<| tag == 'vagranthost' |>>
