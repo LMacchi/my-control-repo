@@ -18,7 +18,7 @@ class profile::base {
 
   @@sshkey { "${::fqdn}-rsa":
     ensure       => present,
-    host_aliases => [$::hostname,$::ipaddress],
+    host_aliases => [$::hostname,$vagrantip],
     key          => $vagrantrsakey,
     type         => 'ssh-rsa',
     tag          => 'vagranthost',
