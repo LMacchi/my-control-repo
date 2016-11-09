@@ -4,6 +4,13 @@ class profile::gitlab {
     path => '/usr/bin',
   }
 
+  file { '/etc/gitlab':
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+  }
+
   file { '/etc/gitlab/ssl':
     ensure => directory,
     owner => 'root',
