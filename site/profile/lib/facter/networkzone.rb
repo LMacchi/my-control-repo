@@ -4,6 +4,7 @@ Facter.add(:networkzone) do
     network = Facter.value(:networking)['interfaces'].each do |iface, values|
       if values['ip'] =~ /172\.16\./
         $result = 'dmz'
+        break
       end
     end
     $result
