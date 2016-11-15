@@ -1,0 +1,3 @@
+---
+ntp::servers:
+  - '2.pool.ntp.org'
