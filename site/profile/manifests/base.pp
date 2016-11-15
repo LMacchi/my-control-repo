@@ -25,5 +25,7 @@ class profile::base {
   }
 
   Sshkey <<| tag == 'vagranthost' |>>
+  
+  include ntp
 
 }
