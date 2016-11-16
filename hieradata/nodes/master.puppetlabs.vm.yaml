@@ -1,0 +1,2 @@
+---
+puppet_enterprise::profile::puppetdb::listen_address: '0.0.0.0'
