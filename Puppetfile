@@ -9,4 +9,4 @@ mod 'puppetlabs-inifile', '1.6.0'
 
 mod 'ntp',
   :git => 'https://github.com/puppetlabs/puppetlabs-ntp',
-  :tag => '5.0.0'
+  :tag => '4.2.0'
