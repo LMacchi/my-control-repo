@@ -1,12 +1,14 @@
+require "ipaddr"
 Facter.add(:networkzone) do
   setcode do
-    $result = 'internal'
     network = Facter.value(:networking)['interfaces'].each do |iface, values|
-      if values['ip'] =~ /172\.16\./
-        $result = 'dmz'
-        break
+      if IPAddr.new("172.16.0.0/16").include?(values['ip'])
+          $result = 'internal'
+          break # I found the internal ip, don't bother continuing
+      else
+          $result = 'dmz'
       end
     end
-    $result
+  $result
   end
 end
