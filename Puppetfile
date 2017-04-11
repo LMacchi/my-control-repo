@@ -9,5 +9,6 @@ mod 'puppetlabs/haproxy'
 mod 'puppetlabs/concat'
   
 
+# Get the latest commit in the branch 'master'
 mod 'ntp',
-  :git => 'https://github.com/LMacchi/puppetlabs-ntp.git'
+  :git => 'https://github.com/puppetlabs/puppetlabs-ntp.git'
