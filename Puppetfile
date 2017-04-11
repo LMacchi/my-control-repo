@@ -7,6 +7,7 @@ mod 'WhatsARanjit/node_manager'
 mod 'puppetlabs/pe_gem'
 mod 'puppetlabs/haproxy'
 mod 'puppetlabs/concat'
+mod 'vshn/gitlab'
   
 
 # Get the latest commit in the branch 'master'
