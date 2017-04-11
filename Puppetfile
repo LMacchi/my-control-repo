@@ -10,5 +10,4 @@ mod 'puppetlabs/concat'
   
 
 mod 'ntp',
-  :git => 'https://github.com/puppetlabs/puppetlabs-ntp',
-  :tag => '6.0.0'
+  :git => 'https://github.com/LMacchi/puppetlabs-ntp.git'
