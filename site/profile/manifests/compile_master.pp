@@ -1,5 +1,5 @@
 class profile::compile_master {
-  @@haproxy::balancermember { 'haproxy':
+  @@haproxy::balancermember { "haproxy_${::hostname}":
     listening_service => 'puppet00',
     ports             => '8140',
     server_names      => $::hostname,
