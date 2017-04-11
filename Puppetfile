@@ -4,6 +4,7 @@ mod 'puppetlabs/stdlib'
 mod 'puppetlabs/apt'
 mod 'puppetlabs/inifile'
 mod 'WhatsARanjit/node_manager'
+mod 'puppetlabs-haproxy'
   
 
 mod 'ntp',
