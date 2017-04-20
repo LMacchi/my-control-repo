@@ -13,3 +13,7 @@ mod 'puppetlabs/java', '1.6.0'
 mod 'darin/zypprepo', '1.0.2'
 mod 'puppet/archive', '1.3.0'
 mod 'puppet/nginx'
+
+mod 'puppetlabs/ntp',
+  :git => 'https://github.com/LMacchi/puppetlabs-ntp.git',
+  :tag => '6.1.0'
