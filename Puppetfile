@@ -12,3 +12,6 @@ mod 'rtyler/jenkins', '1.7.0'
 mod 'puppetlabs/java', '1.6.0'
 mod 'darin/zypprepo', '1.0.2'
 mod 'puppet/archive', '1.3.0'
+
+mod 'puppet_agent_settings',
+  :git => 'https://github.com/LMacchi/puppet_agent_settings.git'
