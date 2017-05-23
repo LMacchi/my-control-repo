@@ -10,6 +10,7 @@ class profile::jenkins {
   jenkins::plugin { 'copyartifact': }
   jenkins::plugin { 'credentials-binding': }
   jenkins::plugin { 'display-url-api': }
+  jenkins::plugin { 'docker-workflow': }
   jenkins::plugin { 'durable-task': }
   jenkins::plugin { 'git': }
   jenkins::plugin { 'git-client': }
