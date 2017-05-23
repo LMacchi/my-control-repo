@@ -26,8 +26,9 @@ class profile::jenkins {
   jenkins::plugin { 'git': }
   # Dependencies
   jenkins::plugin { 'git-client': }
-  jenkins::plugin { 'matrix-project': }
   jenkins::plugin { 'junit': }
+  jenkins::plugin { 'matrix-project': }
+  jenkins::plugin { 'ssh-credentials': }
 
   # SSH Plugin
   jenkins::plugin { 'ssh-agent': }
