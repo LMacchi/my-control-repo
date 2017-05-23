@@ -2,6 +2,7 @@ class profile::jenkins {
   include jenkins
 
   jenkins::plugin { 'ace-editor': }
+  jenkins::plugin { 'authentication-tokens': }
   jenkins::plugin { 'bouncycastle-api': }
   jenkins::plugin { 'branch-api': }
   jenkins::plugin { 'build-pipeline-plugin': }
@@ -10,12 +11,14 @@ class profile::jenkins {
   jenkins::plugin { 'copyartifact': }
   jenkins::plugin { 'credentials-binding': }
   jenkins::plugin { 'display-url-api': }
+  jenkins::plugin { 'docker-commons': }
   jenkins::plugin { 'docker-workflow': }
   jenkins::plugin { 'durable-task': }
   jenkins::plugin { 'git': }
   jenkins::plugin { 'git-client': }
   jenkins::plugin { 'git-server': }
   jenkins::plugin { 'handlebars': }
+  jenkins::plugin { 'icon-shim': }
   jenkins::plugin { 'javadoc': }
   jenkins::plugin { 'jquery': }
   jenkins::plugin { 'jquery-detached': }
