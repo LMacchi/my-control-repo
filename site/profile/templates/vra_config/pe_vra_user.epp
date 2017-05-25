@@ -1,0 +1,21 @@
+## /etc/sudoers.d/pe_vra_user
+## This file allows the ve_vra_user to remove nodes that are destroyed in VRO/VRA
+## This file also disallows the pe_vra_user from removing the Master and other PE Internal certs.
+
+Defaults:pe_vra_user !requiretty
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet node purge *
+pe_vra_user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge *[[\:blank\:]]*
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config print *
+pe_vra_user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config print *[[\:blank\:]]*
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/facter -p puppetversion
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/facter -p pe_server_version
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet agent -t
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet agent --test --color=false --detailed-exitcodes
+pe_vra_user ALL = (root) NOPASSWD: /bin/kill -HUP *
+pe_vra_user ALL = (root) NOPASSWD: !/bin/kill -HUP *[[\:blank\:]]*
+pe_vra_user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge <%= $trusted[certname] %>
+pe_vra_user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-mcollective-servers
+pe_vra_user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-peadmin-mcollective-client
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet resource service puppet ensure=stopped
+pe_vra_user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+pe_vra_user ALL = (root) NOPASSWD: /bin/cp /etc/puppetlabs/puppet/ssl/ca/ca_crl.pem /etc/puppetlabs/puppet/ssl/crl.pem
