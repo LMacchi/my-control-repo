@@ -1,4 +1,5 @@
 # Configures the user that vRA uses to provision and purge nodes.
+# Shamelessly stolen from Jessykah @nekototori
 class profile::vra_config (
   $puppet_autosign_shared_secret = 'S3cr3tP@ssw0rd!',
 )  {
@@ -9,13 +10,11 @@ class profile::vra_config (
 # this user locally.
   user { 'pe_vra_user':
       ensure           => 'present',
-      gid              => '1001',
       home             => '/home/pe_vra_user',
       password         => '$6$rxdJrITS$yXlw8msHyTOC6a.pSqj8AdHabPazC.QEaSP2jQvtE.hXaZ1wZa7dzFwfclUe04gcq3MkBAIKHkQVs8RZ7F0QI.',
       password_max_age => '99999',
       password_min_age => '0',
       shell            => '/bin/bash',
-      uid              => '1001',
       managehome       => true,
   }
 
