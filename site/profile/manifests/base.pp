@@ -11,7 +11,7 @@ class profile::base {
 
   @@host { $facts['fqdn']:
     ensure       => present,
-    host_aliases => [$facts['hostname'],
+    host_aliases => [$facts['hostname']],
     ip           => $vagrantip,
     tag          => 'vagranthost',
   }
