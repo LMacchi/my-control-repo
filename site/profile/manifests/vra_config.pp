@@ -44,11 +44,8 @@ class profile::vra_config (
     value   => '/etc/puppetlabs/puppet/autosign.rb',
     notify  => Service['pe-puppetserver'],
   }
-
-  file_line { 'Allow password auth in sshd':
-    ensure => present,
-    path   => '/etc/ssh/sshd_config',
-    line   => 'PasswordAuthentication yes',
-    match  => '^PasswordAuthentication',
+  
+  class { '::ssh':
+    server_options =>  { 'PasswordAuthentication' => 'yes', }
   }
 }
