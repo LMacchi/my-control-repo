@@ -5,7 +5,7 @@ class profile::base {
   # Discard vbox internal ip
   if $facts['ipaddress'] == '10.0.2.15' {
     $vagrantip = $facts['networking']['interfaces']['eth1']['ip']
-  else
+  } else {
     $vagrantip = $facts['ipaddress']
   }
 
