@@ -48,4 +48,9 @@ class profile::vra_config (
   class { '::ssh':
     server_options =>  { 'PasswordAuthentication' => 'yes', }
   }
+
+  package { ['yard','puppet-strings']:
+    ensure   => latest,
+    provider => 'puppet_gem',
+  }
 }
