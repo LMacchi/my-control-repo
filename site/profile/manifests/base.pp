@@ -1,3 +1,4 @@
+# @summary This profile configures /etc/hosts and RSA keys
 class profile::base {
 
   # Collect all vagrant hosts!
@@ -26,6 +27,4 @@ class profile::base {
 
   Sshkey <<| tag == 'vagranthost' |>>
   
-  include ntp
-
 }
