@@ -26,5 +26,11 @@ class profile::base {
   }
 
   Sshkey <<| tag == 'vagranthost' |>>
+
+  # Ensure Vagrant/CentOS users have sudo access
+  sudo::conf { 'Wheel':
+    ensure  => 'present',
+    content => '%wheel    ALL=(ALL)       NOPASSWD: ALL',
+  }
   
 }
