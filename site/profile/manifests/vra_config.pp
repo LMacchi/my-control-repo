@@ -44,7 +44,7 @@ class profile::vra_config (
     value   => '/etc/puppetlabs/puppet/autosign.rb',
     notify  => Service['pe-puppetserver'],
   }
-  
+ 
   class { '::ssh':
     server_options =>  { 'PasswordAuthentication' => 'yes', }
   }

@@ -37,5 +37,5 @@ class profile::base {
     ensure  => 'present',
     content => '%wheel    ALL=(ALL)       NOPASSWD: ALL',
   }
-  
+
 }

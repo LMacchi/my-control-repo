@@ -13,9 +13,9 @@ class profile::gitlab {
 
   file { '/etc/gitlab/ssl':
     ensure => directory,
-    owner => 'root',
-    group => 'root',
-    mode  => '0700',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0700',
   }
 
   exec { 'create gitlab crt':

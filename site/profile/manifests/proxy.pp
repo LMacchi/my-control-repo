@@ -1,3 +1,5 @@
+# Class to configure a load balancer
+# using HAProxy
 class profile::proxy {
   class { 'haproxy':
     defaults_options => {
@@ -6,7 +8,7 @@ class profile::proxy {
       'maxconn' => '8000',
     },
   }
-  
+
   haproxy::listen { 'puppet00':
     mode      => 'tcp',
     ipaddress => '0.0.0.0',
