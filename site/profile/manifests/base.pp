@@ -20,18 +20,20 @@ class profile::base {
 
   # Collect all vagrant sshkeys!
 
-  $vagrantrsakey = $::ssh['rsa']['key']
+  if $facts['ssh'] {
+    $vagrantrsakey = $::facts['ssh']['rsa']['key']
 
-  @@sshkey { "${::fqdn}-rsa":
-    ensure       => present,
-    host_aliases => [$facts['hostname'],$vagrantip],
-    key          => $vagrantrsakey,
-    type         => 'ssh-rsa',
-    tag          => 'vagranthost',
+    @@sshkey { "${::fqdn}-rsa":
+      ensure       => present,
+      host_aliases => [$facts['hostname'],$vagrantip],
+      key          => $vagrantrsakey,
+      type         => 'ssh-rsa',
+      tag          => 'vagranthost',
+    }
+
+    Sshkey <<| tag == 'vagranthost' |>>
   }
-
-  Sshkey <<| tag == 'vagranthost' |>>
-
+  
   # Ensure Vagrant/CentOS users have sudo access
   sudo::conf { 'Wheel':
     ensure  => 'present',
