@@ -51,5 +51,5 @@ node_groups:
 
 test_matrix:
   - testing:
-      classes: 'role::vcs'
+      classes: 'all_classes'
       tests: 'spec'
