@@ -1,6 +1,6 @@
 forge "http://forge.puppetlabs.com"
 
-mod 'puppetlabs/stdlib', '4.16.0'
+mod 'puppetlabs/stdlib', '4.17.1'
 mod 'puppetlabs/apt', '2.4.0'
 mod 'puppetlabs/inifile', '1.6.0'
 mod 'WhatsARanjit/node_manager', '0.4.1'
@@ -15,4 +15,3 @@ mod 'puppet/archive', '1.3.0'
 mod 'laura/puppet_agent_settings', '0.1.1'
 mod 'saz/sudo', '4.1.0'
 mod 'saz/ssh', '3.0.1'
-mod 'puppetlabs/stdlib', '4.17.1'
