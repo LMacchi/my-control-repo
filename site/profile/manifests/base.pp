@@ -25,5 +25,15 @@ class profile::base {
   
   include vim
   vim::vim_profile { 'root': }
+  
+  include git
+  
+  git::config { 'user.name':
+    value => 'Laura Macchi',
+  }
+
+  git::config { 'user.email':
+    value => 'lm@puppet.com',
+  }
 
 }
