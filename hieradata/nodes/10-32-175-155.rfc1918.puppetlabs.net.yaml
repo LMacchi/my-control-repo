@@ -1,0 +1,7 @@
+---
+puppet_enterprise::profile::puppetdb::listen_address: '0.0.0.0'
+
+puppet_enterprise::profile::certificate_authority::client_whitelist:
+  - '10-32-175-155.rfc1918.puppetlabs.net'
+  - '10-32-175-18.rfc1918.puppetlabs.net'
+
