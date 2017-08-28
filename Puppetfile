@@ -20,4 +20,4 @@ mod 'puppetlabs-git', '0.5.0'
 
 mod 'lmacchi/stuff',
   :git => 'https://github.com/LMacchi/stuff.git',
-  :ref => '513fb6a7d21ffdef7f3fa1f1b92847533b768cfd'
+  :ref => 'ebcf3794592e2ac10514fd964a0e3fd774e38133'
