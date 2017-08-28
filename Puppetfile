@@ -20,4 +20,4 @@ mod 'puppetlabs-git', '0.5.0'
 
 mod 'lmacchi/stuff',
   :git => 'https://github.com/LMacchi/stuff.git',
-  :tag => '0.1.0'
+  :tag => '0.2.0'
