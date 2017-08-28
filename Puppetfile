@@ -17,3 +17,7 @@ mod 'saz/sudo', '4.1.0'
 mod 'saz/ssh', '3.0.1'
 mod 'WhatsARanjit-vim', '0.3.0'
 mod 'puppetlabs-git', '0.5.0'
+
+mod 'lmacchi/stuff',
+  :git => 'https://github.com/LMacchi/stuff.git',
+  :ref => '513fb6a7d21ffdef7f3fa1f1b92847533b768cfd'
