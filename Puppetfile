@@ -21,3 +21,7 @@ mod 'puppetlabs-git', '0.5.0'
 mod 'lmacchi/stuff',
   :git => 'https://github.com/LMacchi/stuff.git',
   :tag => '0.2.0'
+
+mod 'lmacchi/redis',
+  :git => 'https://github.com/LMacchi/puppet_redis.git',
+  :tag => '0.1.0'
