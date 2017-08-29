@@ -24,4 +24,4 @@ mod 'lmacchi/stuff',
 
 mod 'lmacchi/redis',
   :git => 'https://github.com/LMacchi/puppet_redis.git',
-  :ref => '6c8d47241581d122e1e9c0836290dc107d52f56b'
+  :tag => '0.1.0'
