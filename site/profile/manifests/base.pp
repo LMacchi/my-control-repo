@@ -1,21 +1,14 @@
-# @summary This profile configures /etc/hosts and RSA keys
+# @summary This profile configures /etc/hosts
 class profile::base {
-
-  # Collect all vagrant sshkeys!
-
-  if $facts['ssh'] {
-    $vagrantrsakey = $::facts['ssh']['rsa']['key']
-
-    @@sshkey { "${::fqdn}-rsa":
-      ensure       => present,
-      host_aliases => [$facts['hostname'], $facts['ipaddress']],
-      key          => $vagrantrsakey,
-      type         => 'ssh-rsa',
-      tag          => 'vagranthost',
-    }
-
-    Sshkey <<| tag == 'vagranthost' |>>
+  
+  @@host { $facts['fqdn']:
+    ensure       => present,
+    host_aliases => $trusted['extensions']['pp_role'],
+    ip           => $facts['ipaddress'],
+    tag          => 'puppet',
   }
+  
+  Host <<| tag == 'puppet' |>>
   
   # Ensure Vagrant/CentOS users have sudo access
   sudo::conf { 'Wheel':
