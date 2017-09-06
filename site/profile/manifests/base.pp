@@ -28,5 +28,10 @@ class profile::base {
   git::config { 'user.email':
     value => 'lm@puppet.com',
   }
+  
+  file_line { 'bashrc_friendly_name':
+    path => '/root/.bashrc',
+    line => "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> ""
+  }
 
 }
