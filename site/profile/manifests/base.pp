@@ -1,9 +1,19 @@
 # @summary This profile configures /etc/hosts
 class profile::base {
+
+  
+  if $trusted['extensions']['pp_role'] {
+    $line  = "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> \""
+    $alias =  $trusted['extensions']['pp_role']
+  } else {
+    $line = "PS1=\"\u@${facter['fqdn']} \t \w> \""
+    $alias = $facts['hostname']
+  }
+  
   
   @@host { $facts['fqdn']:
     ensure       => present,
-    host_aliases => $trusted['extensions']['pp_role'],
+    host_aliases => $alias,
     ip           => $facts['ipaddress'],
     tag          => 'puppet',
   }
@@ -28,13 +38,7 @@ class profile::base {
   git::config { 'user.email':
     value => 'lm@puppet.com',
   }
-  
-  if $trusted['extensions']['pp_role'] {
-    $line = "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> \""
-  } else {
-    $line = "PS1=\"\u@${facter['fqdn']} \t \w> \""
-  }
-  
+
   file_line { 'bashrc_friendly_name':
     path => '/root/.bashrc',
     line => $line,
