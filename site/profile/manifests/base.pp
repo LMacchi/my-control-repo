@@ -31,7 +31,7 @@ class profile::base {
   
   file_line { 'bashrc_friendly_name':
     path => '/root/.bashrc',
-    line => "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> "\"
+    line => "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> \""
   }
 
 }
