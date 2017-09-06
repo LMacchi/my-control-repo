@@ -3,10 +3,10 @@ class profile::base {
 
   
   if $trusted['extensions']['pp_role'] {
-    $line  = "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> \""
-    $alias =  $trusted['extensions']['pp_role']
+    $line  = "PS1='\$USER@${trusted['extensions']['pp_role']} \$PWD> '"
+    $alias = $trusted['extensions']['pp_role']
   } else {
-    $line = "PS1=\"\u@${facter['fqdn']} \t \w> \""
+    $line = "PS1='\$USER@${facts['fqdn']} \$PWD> '"
     $alias = $facts['hostname']
   }
   
