@@ -16,8 +16,8 @@ class profile::base {
     host_aliases => $alias,
     ip           => $facts['ipaddress'],
     tag          => 'puppet',
+  }
   
-
   Host <<| tag == 'puppet' |>>
 
   # Ensure Vagrant/CentOS users have sudo access
