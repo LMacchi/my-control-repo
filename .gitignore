@@ -1,3 +1,5 @@
 hieradata/nodes/example-puppet-master.yaml
 .onceover
-Gemfile.lock
+Gemfile.locka
+vendor
+bundle
