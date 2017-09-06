@@ -29,9 +29,13 @@ class profile::base {
     value => 'lm@puppet.com',
   }
   
+  if str2bool($trusted['extensions']['pp_role']) {
+    $line = "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> \""
+  } else {
+    $line = "PS1=\"\u@${facter['fqdn']} \t \w> \""
   file_line { 'bashrc_friendly_name':
     path => '/root/.bashrc',
-    line => "PS1=\"\u@${trusted['extensions']['pp_role']} \t \w> \""
+    line => $line,
   }
 
 }
