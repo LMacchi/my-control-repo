@@ -16,7 +16,7 @@ class profile::base {
     host_aliases => $alias,
     ip           => $facts['ipaddress'],
     tag          => 'puppet',
-  }
+  
 
   Host <<| tag == 'puppet' |>>
 
