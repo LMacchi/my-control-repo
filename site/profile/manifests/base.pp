@@ -1,7 +1,6 @@
 # @summary This profile configures /etc/hosts
 class profile::base {
 
-
   if $trusted['extensions']['pp_role'] {
     $line  = "PS1='\$USER@${trusted['extensions']['pp_role']} \$PWD> '"
     $alias = $trusted['extensions']['pp_role']
@@ -9,17 +8,29 @@ class profile::base {
     $line = "PS1='\$USER@${facts['fqdn']} \$PWD> '"
     $alias = $facts['hostname']
   }
-
-
-  @@host { $facts['fqdn']:
-    ensure       => present,
-    host_aliases => $alias,
-    ip           => $facts['ipaddress'],
-    tag          => 'puppet',
+  
+  if $facts['external_ip'] {
+    @@host { $facts['fqdn']:
+      ensure       => present,
+      host_aliases => $alias,
+      ip           => $facts['external_ip'],
+      tag          => 'ext',
+    }
+  
+    Host <<| tag == 'ext' |>>
+    
+  } else {
+    @@host { $facts['fqdn']:
+      ensure       => present,
+      host_aliases => $alias,
+      ip           => $facts['ipaddress'],
+      tag          => 'int',
+    }
+  
+    Host <<| tag == 'int' |>>
+    
   }
   
-  Host <<| tag == 'puppet' |>>
-
   # Ensure Vagrant/CentOS users have sudo access
   sudo::conf { 'Wheel':
     ensure  => 'present',
