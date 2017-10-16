@@ -15,14 +15,6 @@ mod 'puppet/archive', '1.3.0'
 mod 'laura/puppet_agent_settings', '0.1.1'
 mod 'saz/sudo', '4.1.0'
 mod 'saz/ssh', '3.0.1'
-mod 'WhatsARanjit-vim', '0.3.0'
-mod 'puppetlabs-git', '0.5.0'
-mod 'puppetlabs-mysql', '2.2.3'
-
-mod 'lmacchi/stuff',
-  :git => 'https://github.com/LMacchi/stuff.git',
-  :tag => '0.2.0'
-
-mod 'lmacchi/redis',
-  :git => 'https://github.com/LMacchi/puppet_redis.git',
-  :tag => '0.1.0'
+mod 'WhatsARanjit/vim', '0.3.0'
+mod 'puppetlabs/git', '0.5.0'
+mod 'puppetlabs/mysql', '2.2.3'
