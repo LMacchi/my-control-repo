@@ -19,3 +19,6 @@ mod 'WhatsARanjit/vim', '0.3.0'
 mod 'puppetlabs/git', '0.5.0'
 mod 'puppetlabs/mysql', '2.2.3'
 mod 'puppetlabs/exec', '0.1.0'
+
+mod 'mytasks',
+  :git => 'https://github.com/LMacchi/puppet_tasks.git'
