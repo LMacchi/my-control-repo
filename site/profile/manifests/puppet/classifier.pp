@@ -32,7 +32,7 @@ class profile::puppet::classifier {
       }
     },
     environment          => 'production',
-    override_environment => 'false',
+    override_environment => false,
     parent               => 'All Nodes',
     rule                 => ['and', ['~', 'name', '.*']],
   }
