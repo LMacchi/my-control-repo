@@ -16,8 +16,13 @@ class profile::jenkins2 {
     ensure => present,
   }
   
+  service { 'jenkins':
+    ensure => running,
+  }
+  
   Yumrepo['jenkins'] 
   -> Rpmkey['D50582E6']
   -> Package['java']
   -> Package['jenkins']
+  -> Service['jenkins']
 }
