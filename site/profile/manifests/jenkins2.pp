@@ -16,6 +16,12 @@ class profile::jenkins2 {
     ensure => present,
   }
   
+  # Disable setup wizard
+  file { '/etc/default/jenkins':
+    ensure  => file,
+    content => 'JAVA_ARGS=Djenkins.install.runSetupWizard=false',
+  }
+  
   service { 'jenkins':
     ensure => running,
   }
@@ -24,5 +30,6 @@ class profile::jenkins2 {
   -> Rpmkey['D50582E6']
   -> Package['java']
   -> Package['jenkins']
-  -> Service['jenkins']
+  -> File['/etc/default/jenkins']
+  ~> Service['jenkins']
 }
