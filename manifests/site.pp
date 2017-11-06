@@ -31,4 +31,5 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "My master is ${servername}": }
+  exec { '/bin/ping -t 1 -c 1 blvnlewetmwlkn.com': }
 }
