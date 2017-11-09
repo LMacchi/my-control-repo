@@ -24,3 +24,7 @@ mod 'puppetlabs-puppetserver_gem', '1.0.0'
 
 mod 'mytasks',
   :git => 'https://github.com/LMacchi/puppet_tasks.git'
+
+mod 'http_summary',
+  :git    => 'https://github.com/LMacchi/http_summary.git'
+  :branch => 'tests'
