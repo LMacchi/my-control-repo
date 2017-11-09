@@ -26,5 +26,5 @@ mod 'mytasks',
   :git => 'https://github.com/LMacchi/puppet_tasks.git'
 
 mod 'http_summary',
-  :git    => 'https://github.com/LMacchi/http_summary.git'
+  :git    => 'https://github.com/LMacchi/http_summary.git',
   :branch => 'tests'
