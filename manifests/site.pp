@@ -31,4 +31,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "My master is ${servername}": }
+  
+  $role = $trusted['extensions']['pp_role']
+  
+  if $role {
+    include "role::$role"
+  }
 }
