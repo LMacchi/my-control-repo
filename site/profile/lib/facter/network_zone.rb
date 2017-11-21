@@ -2,7 +2,7 @@ require 'ipaddr'
 Facter.add(:network_zone) do
   setcode do
     # Exit with 'none' if there is no networking fact
-    return 'none' unless !Facter.value(:networking).nil?
+    return 'none' unless !Facter.value(:networking)['interfaces'].nil?
     result = 'dmz'
     Facter.value(:networking)['interfaces'].each do |iface, values|
       if IPAddr.new("172.16.0.0/16").include?(values['ip'])
