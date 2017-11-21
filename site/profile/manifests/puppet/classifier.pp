@@ -72,4 +72,13 @@ class profile::puppet::classifier {
     parent               => 'All Nodes',
     rule                 => ['=', 'name', $facts['fqdn']],
   }
+  
+  node_group { 'Agents':
+    ensure               => 'present',
+    classes              => {'profile::base' => {}},
+    environment          => 'production',
+    override_environment => false,
+    parent               => 'All Nodes',
+    rule                 => ['~', ['trusted', 'extensions', 'pp_role'], 'agent'],
+  }
 }
