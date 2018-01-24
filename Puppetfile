@@ -3,7 +3,7 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs/stdlib', '4.17.1'
 mod 'puppetlabs/apt', '2.4.0'
 mod 'puppetlabs/inifile', '1.6.0'
-mod 'WhatsARanjit/node_manager', '0.4.1'
+mod 'WhatsARanjit/node_manager', '0.6.0'
 mod 'puppetlabs/pe_gem', '0.2.0'
 mod 'puppetlabs/haproxy', '1.5.0'
 mod 'puppetlabs/concat', '2.2.1'
