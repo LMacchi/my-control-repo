@@ -6,7 +6,7 @@ script: "bundle exec onceover run spec"
 matrix:
   fast_finish: true
   include:
-  - rvm: 2.4.1
-    env: PUPPET_GEM_VERSION="= 5.3.5"
+  - rvm: 2.4.3
+    env: PUPPET_GEM_VERSION="> 5.0.0"
 notifications:
   email: false
