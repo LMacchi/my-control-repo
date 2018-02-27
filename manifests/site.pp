@@ -25,6 +25,10 @@ File { backup => false }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+$role = $trusted['extensions']['pp_role'] ? {
+  undef   => 'NONE',
+  default => $trusted['extensions']['pp_role']
+}
 
 node default {
   # This is where you can declare classes for all nodes.
