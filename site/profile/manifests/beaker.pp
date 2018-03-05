@@ -14,7 +14,7 @@ class profile::beaker {
 
   rvm_gem { 'beaker':
     name         => 'beaker',
-    ruby_version => 'ruby 2.4.0',
+    ruby_version => 'ruby-2.4.0',
     ensure       => latest,
     require      => Rvm_system_ruby['ruby-2.4.0'],
   }
