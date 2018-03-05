@@ -7,16 +7,16 @@ class profile::beaker {
 
   include rvm
 
-  rvm_system_ruby { 'ruby-2.4.0p0':
+  rvm_system_ruby { 'ruby-2.4.0':
     ensure      => present,
     default_use => true,
   }
 
   rvm_gem { 'beaker':
     name         => 'beaker',
-    ruby_version => 'ruby 2.4.0p0',
+    ruby_version => 'ruby 2.4.0',
     ensure       => latest,
-    require      => Rvm_system_ruby['ruby-2.4.0p0'],
+    require      => Rvm_system_ruby['ruby-2.4.0'],
   }
 
   include docker
