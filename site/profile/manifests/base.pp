@@ -55,4 +55,8 @@ class profile::base {
     line => $line,
   }
 
+  package { 'tree':
+    ensure => present,
+  }
+
 }
