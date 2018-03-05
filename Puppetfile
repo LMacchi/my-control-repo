@@ -24,6 +24,9 @@ mod 'puppetlabs/exec', '0.1.0'
 mod 'puppet/hiera', '3.3.1'
 mod 'puppetlabs/puppetserver_gem', '1.0.0'
 mod 'stschulte/rpmkey', '1.0.3'
+mod 'maestrodev-rvm', '1.13.1'
+mod 'golja-gnupg', '1.2.3'
+mod 'puppetlabs-docker', '1.0.5'
 
 mod 'mytasks',
   :git => 'https://github.com/LMacchi/puppet_tasks.git'
