@@ -1,5 +1,7 @@
 class profile::beaker {
 
+  $project_root = lookup('beaker_project_root', Stdlib::AbsolutePath, '/root/beaker_project')
+
   package { ['make', 'gcc', 'gcc-c++', 'libxml2-devel', 'libxslt-devel', 'ruby-devel']:
     ensure => present,
     before => Class['rvm'],
@@ -21,7 +23,7 @@ class profile::beaker {
 
   include docker
 
-  file { ['/root/project', '/root/project/acceptance', '/root/project/acceptance/config', '/root/project/acceptance/setup', '/root/project/acceptance/tests']:
+  file { [$project_root, "${project_root}/acceptance", "${project_root}/acceptance/config", "${project_root}/acceptance/setup", "${project_root}/acceptance/tests"]:
     ensure => directory,
   }
 
