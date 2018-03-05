@@ -21,4 +21,8 @@ class profile::beaker {
 
   include docker
 
+  file { ['/root/project', '/root/project/acceptance', '/root/project/acceptance/config', '/root/project/acceptance/setup', '/root/project/acceptance/tests']:
+    ensure => directory,
+  }
+
 }
