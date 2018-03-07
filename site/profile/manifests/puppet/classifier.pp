@@ -73,6 +73,15 @@ class profile::puppet::classifier {
     rule                 => ['=', 'name', $facts['fqdn']],
   }
   
+  node_group { 'Docker Server':
+    ensure               => 'present',
+    classes              => { 'role::docker' => {}},
+    environment          => 'production',
+    override_environment => false,
+    parent               => 'All Nodes',
+    rule                 => ['=', ['trusted', 'extensions', 'pp_role'], 'docker'],
+  }
+  
   node_group { 'Agents':
     ensure               => 'present',
     classes              => {'profile::base' => {}},
