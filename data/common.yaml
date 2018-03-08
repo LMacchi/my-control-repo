@@ -3,3 +3,4 @@ message: "This node is using common data"
 ntp::servers: 
   - "0.pool.ntp.org"
   - "1.pool.ntp.org"
+bitbucket_version: '5.5.0'
