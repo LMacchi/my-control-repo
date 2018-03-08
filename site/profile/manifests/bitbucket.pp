@@ -9,6 +9,7 @@ class profile::bitbucket {
   }
 
   include java
+  include postgresql::server
 
   class { 'bitbucket':
     version        => '5.5.0',
