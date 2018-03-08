@@ -63,6 +63,15 @@ class profile::puppet::classifier {
     parent               => 'All Nodes',
     rule                 => ['=', ['trusted', 'extensions', 'pp_role'], 'vcs'],
   }
+
+  node_group { 'Bitbucket Server':
+    ensure               => 'present',
+    classes              => { 'role::bitbucket' => {}},
+    environment          => 'production',
+    override_environment => false,
+    parent               => 'All Nodes',
+    rule                 => ['=', ['trusted', 'extensions', 'pp_role'], 'bitbucket'],
+  }
   
   node_group { 'vRA Integration':
     ensure               => 'present',
