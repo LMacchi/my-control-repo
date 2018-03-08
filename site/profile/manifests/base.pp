@@ -32,7 +32,7 @@ class profile::base {
   }
   
   # Ensure Vagrant users have sudo access
-  $sudo_group = $facts['os'['family'] ? {
+  $sudo_group = $facts['os']['family'] ? {
     'Debian' => 'sudo',
     default  => 'wheel',
   }
