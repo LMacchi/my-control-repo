@@ -4,7 +4,7 @@ class profile::bitbucket {
     ensure => directory,
   }
 
-  package { ['git','unzip']:
+  package { 'unzip':
     ensure => present,
   }
 
