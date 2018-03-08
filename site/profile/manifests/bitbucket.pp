@@ -13,6 +13,11 @@ class profile::bitbucket {
   include java
   include postgresql::server
 
+  postgresql::server::db { 'bitbucket':
+    user     => 'bitbucket',
+    password => postgresql_password('bitbucket', 'password'),
+  }
+
   class { 'bitbucket':
     version        => $bb_version,
     installdir     => '/opt/atlassian/atlassian-bitbucket',
