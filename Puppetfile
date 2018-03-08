@@ -25,7 +25,6 @@ mod 'puppet/hiera', '3.3.1'
 mod 'puppetlabs/puppetserver_gem', '1.0.0'
 mod 'stschulte/rpmkey', '1.0.3'
 mod 'puppetlabs/docker', '1.0.5'
-mod 'puppetlabs/java', '2.4.0'
 mod 'mkrakowitzer/deploy', '0.0.3'
 mod 'thewired/bitbucket', '2.2.4'
 
