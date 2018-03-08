@@ -10,20 +10,6 @@ class profile::bitbucket {
     ensure => present,
   }
 
-  firewalld_port { 'Open port 7990':
-    ensure   => present,
-    zone     => 'public',
-    port     => '7990',
-    protocol => 'tcp',
-  }
-
-  firewalld_port { 'Open port 7999':
-    ensure   => present,
-    zone     => 'public',
-    port     => '7999',
-    protocol => 'tcp',
-  }
-
   include java
   include postgresql::server
 
