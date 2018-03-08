@@ -31,10 +31,15 @@ class profile::base {
     
   }
   
-  # Ensure Vagrant/CentOS users have sudo access
-  sudo::conf { 'Wheel':
+  # Ensure Vagrant users have sudo access
+  $sudo_group = $facts['os'['family'] ? {
+    'Debian' => 'sudo',
+    default  => 'wheel',
+  }
+
+  sudo::conf { "Group_${sudo_group}":
     ensure  => 'present',
-    content => '%wheel    ALL=(ALL)       NOPASSWD: ALL',
+    content => "%${sudo_group}    ALL=(ALL)       NOPASSWD: ALL",
   }
 
   include vim
