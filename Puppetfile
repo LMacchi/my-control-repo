@@ -26,8 +26,7 @@ mod 'puppetlabs/puppetserver_gem', '1.0.0'
 mod 'stschulte/rpmkey', '1.0.3'
 mod 'puppetlabs/docker', '1.0.5'
 mod 'mkrakowitzer/deploy', '0.0.3'
-mod 'thewired/bitbucket', '2.2.4'
-mod 'puppetlabs/postgresql', '5.3.0'
+mod 'puppetlabs/java_ks', '2.2.0'
 
 mod 'mytasks',
   :git => 'https://github.com/LMacchi/puppet_tasks.git'
