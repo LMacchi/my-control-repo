@@ -9,7 +9,7 @@ class profile::bitbucket {
 
   # Run BitBucket Installer
   exec { 'Run Bitbucket Server Installer':
-    command   => '/tmp/bb_installer.bin',
+    command   => '/tmp/bb_installer.bin -q',
     creates   => "/opt/atlassian/bitbucket/${bitbucket_version}/bin/_start-webapp.sh",
     logoutput => true,
     require   => [
