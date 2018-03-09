@@ -10,7 +10,7 @@ class profile::bitbucket {
   # Run BitBucket Installer
   exec { 'Run Bitbucket Server Installer':
     command   => '/tmp/bb_installer.bin -q',
-    creates   => "/opt/atlassian/bitbucket/${bitbucket_version}/bin/_start-webapp.sh",
+    creates   => "/opt/atlassian/bitbucket/${bb_version}/bin/_start-webapp.sh",
     logoutput => true,
     require   => [
       File['/tmp/bb_installer.bin'],
@@ -20,7 +20,7 @@ class profile::bitbucket {
 
   file { '/usr/bin/keytool':
     ensure => link,
-    target => "/opt/atlassian/bitbucket/${bitbucket_version}/jre/bin/keytool",
+    target => "/opt/atlassian/bitbucket/${bb_version}/jre/bin/keytool",
   }
 
   file { 'bitbucket.service':
@@ -54,7 +54,7 @@ class profile::bitbucket {
   java_ks { $::settings::server :
     ensure       => latest,
     certificate  => "${::settings::certdir}/ca.pem",
-    target       => "/opt/atlassian/bitbucket/${bitbucket_version}/jre/lib/security/cacerts",
+    target       => "/opt/atlassian/bitbucket/${bb_version}/jre/lib/security/cacerts",
     password     => 'changeit',
     trustcacerts => true,
     require      => [ Exec['Run Bitbucket Server Installer'], File['/usr/bin/keytool'] ],
