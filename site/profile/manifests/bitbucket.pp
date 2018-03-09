@@ -2,16 +2,6 @@ class profile::bitbucket {
 
   $bb_version = lookup('bitbucket_version')
 
-  package { 'ruby':
-    ensure => present,
-  }
-
-  package { 'puppet-lint':
-    ensure   => present,
-    provider => 'gem',
-    require  => Package['ruby'],
-  }
-
   file { '/tmp/bb_installer.bin':
     source => "https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${bb_version}-x64.bin",
     mode   => '0755',
