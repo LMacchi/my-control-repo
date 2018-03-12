@@ -1,3 +1,4 @@
+# @summary Profile to create a bitbucket server
 class profile::bitbucket {
 
   $bb_version = lookup('bitbucket_version')
@@ -46,7 +47,7 @@ class profile::bitbucket {
       Exec['Run Bitbucket Server Installer'],
       File['bitbucket.service'],
       Exec['reload systemctl'],
-    ]
+    ],
   }
 
   # Add the Puppet CA as a trusted certificate authority because

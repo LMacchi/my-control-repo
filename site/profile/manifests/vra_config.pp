@@ -46,7 +46,9 @@ class profile::vra_config (
   }
 
   class { '::ssh':
-    server_options =>  { 'PasswordAuthentication' => 'yes', }
+    server_options =>  {
+      'PasswordAuthentication' => 'yes',
+    },
   }
 
   package { ['yard','puppet-strings']:

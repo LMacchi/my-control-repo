@@ -24,11 +24,11 @@ class profile::gitlab {
     require => File['/etc/gitlab/ssl'],
   }
 
-  class { 'gitlab':
+  class { '::gitlab':
     external_url => 'https://gitlab.puppetlabs.vm',
     nginx        => {
       ssl_certificate     => '/etc/gitlab/ssl/gitlab.puppetlabs.vm.crt',
-      ssl_certificate_key => '/etc/gitlab/ssl/gitlab.puppetlabs.vm.key'
+      ssl_certificate_key => '/etc/gitlab/ssl/gitlab.puppetlabs.vm.key',
     },
     require      => Exec['create gitlab crt'],
   }

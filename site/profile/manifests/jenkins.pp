@@ -1,7 +1,7 @@
 # Profile to configure Jenkins and
 # PE plugin
 class profile::jenkins {
-  include jenkins
+  include ::jenkins
 
 
   # Puppet plugin

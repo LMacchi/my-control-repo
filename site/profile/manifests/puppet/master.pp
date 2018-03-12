@@ -2,20 +2,23 @@
 class profile::puppet::master {
 
   # Configure global hiera
-  class { 'hiera':
-    hiera_version    =>  '5',
-    hiera5_defaults  => { 'datadir' => 'data', 'data_hash' => 'yaml_data' },
-    eyaml            => true,
-    create_keys      => true,
-    hierarchy        =>  [
-      { 'name'       => 'Secrets', 
-        'path'       => 'secrets.eyaml', 
+  class { '::hiera':
+    hiera_version   =>  '5',
+    hiera5_defaults => { 'datadir' => 'data', 'data_hash' => 'yaml_data' },
+    eyaml           => true,
+    create_keys     => true,
+    hierarchy       => [
+      {
+        'name'       => 'Secrets',
+        'path'       => 'secrets.eyaml',
         'lookup_key' => 'eyaml_lookup_key',
       },
-      { 'name'       => 'Nodes yaml', 
-        'paths'      => ['nodes/%{trusted.certname}.yaml', 'nodes/%{facts.datacenter}.yaml'],
+      {
+        'name'  => 'Nodes yaml',
+        'paths' => ['nodes/%{trusted.certname}.yaml', 'nodes/%{facts.datacenter}.yaml'],
       },
-      { 'name' => 'Default yaml file',
+      {
+        'name' => 'Default yaml file',
         'path' =>  'common.yaml',
       },
     ],

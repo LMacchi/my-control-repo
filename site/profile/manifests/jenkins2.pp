@@ -6,22 +6,22 @@ class profile::jenkins2 {
     descr    => 'Jenkins',
     gpgcheck => '1',
   }
-  
+
   rpmkey { 'D50582E6':
     ensure  => present,
     source  => 'https://jenkins-ci.org/redhat/jenkins-ci.org.key',
     require => Yumrepo['jenkins'],
   }
-  
+
   package { 'java':
     ensure => present,
   }
-  
+
   package { 'jenkins':
     ensure  => present,
     require => [Package['java'],Yumrepo['jenkins'],Rpmkey['D50582E6']],
   }
-  
+
   # Disable security
   file_line { 'disable security in jenkins':
     path    => '/var/lib/jenkins/config.xml',
@@ -30,7 +30,7 @@ class profile::jenkins2 {
     require => Package['jenkins'],
     notify  => Service['jenkins'],
   }
-  
+
   # Disable setup wizard
   file { '/etc/default/jenkins':
     ensure  => file,
@@ -38,7 +38,7 @@ class profile::jenkins2 {
     require => Package['jenkins'],
     notify  => Service['jenkins'],
   }
-  
+
   service { 'jenkins':
     ensure => running,
   }

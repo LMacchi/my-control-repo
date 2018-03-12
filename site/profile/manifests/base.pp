@@ -8,7 +8,7 @@ class profile::base {
     $line = "PS1='\$USER@${facts['fqdn']} \$PWD> '"
     $alias = $facts['hostname']
   }
-  
+
   if $facts['external_ip'] {
     @@host { $facts['fqdn']:
       ensure       => present,
@@ -16,9 +16,9 @@ class profile::base {
       ip           => $facts['external_ip'],
       tag          => 'ext',
     }
-  
+
     Host <<| tag == 'ext' |>>
-    
+
   } else {
     @@host { $facts['fqdn']:
       ensure       => present,
@@ -26,11 +26,11 @@ class profile::base {
       ip           => $facts['ipaddress'],
       tag          => 'int',
     }
-  
+
     Host <<| tag == 'int' |>>
-    
+
   }
-  
+
   # Ensure Vagrant users have sudo access
   $sudo_group = $facts['os']['family'] ? {
     'Debian' => 'sudo',
@@ -42,10 +42,10 @@ class profile::base {
     content => "%${sudo_group}    ALL=(ALL)       NOPASSWD: ALL",
   }
 
-  include vim
+  include ::vim
   vim::vim_profile { 'root': }
 
-  include git
+  include ::git
 
   git::config { 'user.name':
     value => 'Laura Macchi',

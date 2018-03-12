@@ -1,7 +1,7 @@
 # Class to configure a load balancer
 # using HAProxy
 class profile::proxy {
-  class { 'haproxy':
+  class { '::haproxy':
     defaults_options => {
       'log'     => 'global',
       'stats'   => 'enable',
