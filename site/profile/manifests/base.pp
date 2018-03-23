@@ -1,6 +1,8 @@
 # @summary This profile configures /etc/hosts
 class profile::base {
 
+  $message = lookup('trusted_msg')
+
   if $trusted['extensions']['pp_role'] {
     $line  = "PS1='\$USER@${trusted['extensions']['pp_role']} \$PWD> '"
     $alias = $trusted['extensions']['pp_role']
