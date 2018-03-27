@@ -13,6 +13,10 @@ nodes:
 # You can group classes here to save typing
 class_groups:
 
+before:
+  -  "OpenSSL::PKey::RSA.stubs(:new).returns(File.read(fixture_file 'private_key.pkcs7.pem'))"
+  -  "OpenSSL::X509::Certificate.stubs(:new).returns(File.read(fixture_file 'public_key.pkcs7.pem'))"
+
 # You can group nodes here to save typing
 # We have created a 'non_windows_nodes' group because we can't
 # give you Windows vagrant boxes to test with because licensing,
