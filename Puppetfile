@@ -36,4 +36,4 @@ mod 'http_summary',
 
 mod 'workshop',
   :git    => 'https://github.com/LMacchi/workshop_exercise.git',
-  :branch => 'master'
+  :branch => 'bijay'
