@@ -33,3 +33,7 @@ mod 'mytasks',
 
 mod 'http_summary',
   :git    => 'https://github.com/LMacchi/http_summary.git'
+
+mod 'workshop',
+  :git    => 'https://github.com/LMacchi/workshop_exercise.git',
+  :branch => 'master'
