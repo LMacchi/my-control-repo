@@ -34,6 +34,6 @@ mod 'mytasks',
 mod 'http_summary',
   :git    => 'https://github.com/LMacchi/http_summary.git'
 
-mod 'workshop',
-  :git    => 'https://github.com/LMacchi/workshop_exercise.git',
+mod 'storage_workspace',
+  :git    => 'https://github.com/LMacchi/storage_workspace.git',
   :branch => 'master'
