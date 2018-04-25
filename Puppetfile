@@ -36,4 +36,4 @@ mod 'http_summary',
 
 mod 'storage_workspace',
   :git    => 'https://github.com/LMacchi/storage_workspace.git',
-  :branch => 'master'
+  :branch => 'luchiano'
