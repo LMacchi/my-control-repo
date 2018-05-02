@@ -6,6 +6,7 @@ class profile::puppet::master {
     hiera_version   =>  '5',
     hiera5_defaults => { 'datadir' => 'data', 'data_hash' => 'yaml_data' },
     eyaml           => true,
+    cmdpath         => ['/opt/puppetlabs/puppet/lib/ruby/vendor_gems/bin','/opt/puppetlabs/puppet/bin',$facts['path']],
     create_keys     => true,
     hierarchy       => [
       {
