@@ -1,6 +1,10 @@
 # @summary This profile configures /etc/hosts
 class profile::base {
 
+  package { 'puppet-agent':
+    ensure => '5.5.1',
+   }
+
   if $trusted['extensions']['pp_role'] {
     $line  = "PS1='\$USER@${trusted['extensions']['pp_role']} \$PWD> '"
     $alias = $trusted['extensions']['pp_role']
