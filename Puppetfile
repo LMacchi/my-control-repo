@@ -27,6 +27,8 @@ mod 'stschulte/rpmkey', '1.0.3'
 mod 'puppetlabs/docker', '1.1.0'
 mod 'mkrakowitzer/deploy', '0.0.3'
 mod 'puppetlabs/java_ks', '2.2.0'
+mod 'puppetlabs-puppet_agent', '1.6.0'
+mod 'puppetlabs-transition', '0.1.1'
 
 mod 'mytasks',
   :git => 'https://github.com/LMacchi/puppet_tasks.git'
@@ -34,6 +36,4 @@ mod 'mytasks',
 mod 'http_summary',
   :git    => 'https://github.com/LMacchi/http_summary.git'
 
-mod 'storage_workspace',
-  :git    => 'https://github.com/LMacchi/storage_workspace.git',
-  :branch => 'luchiano'
+
