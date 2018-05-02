@@ -1,14 +1,6 @@
 # profile/manifests/puppet/master.pp
 class profile::puppet::master {
 
-  # Hiera class does not seem to install the eyaml binary
-  package { 'eyaml_cli':
-    ensure   => present,
-    name     => 'hiera-eyaml',
-    provider => 'puppet_gem',
-    before   => Class['hiera'],
-  }
-
   # Configure global hiera
   class { '::hiera':
     hiera_version   =>  '5',
