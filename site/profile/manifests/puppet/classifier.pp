@@ -24,18 +24,18 @@ class profile::puppet::classifier {
     rule                 => ['=', ['trusted', 'extensions', 'pp_role'], 'ci'],
   }
 
-  node_group { 'Packages Collection':
-    ensure               => 'present',
-    classes              => {
-      'puppet_enterprise::profile::agent' => {
-        'package_inventory_enabled' => true,
-      },
-    },
-    environment          => 'production',
-    override_environment => false,
-    parent               => 'All Nodes',
-    rule                 => ['and', ['~', 'name', '.*']],
-  }
+  #node_group { 'Packages Collection':
+  #  ensure               => 'present',
+  #  classes              => {
+  #    'puppet_enterprise::profile::agent' => {
+  #      'package_inventory_enabled' => true,
+  #    },
+  #  },
+  #  environment          => 'production',
+  #  override_environment => false,
+  #  parent               => 'All Nodes',
+  #  rule                 => ['and', ['~', 'name', '.*']],
+  #}
 
   node_group { 'Proxy Server':
     ensure               => 'present',
