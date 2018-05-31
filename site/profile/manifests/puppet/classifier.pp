@@ -73,14 +73,14 @@ class profile::puppet::classifier {
     rule                 => ['=', ['trusted', 'extensions', 'pp_role'], 'bitbucket'],
   }
 
-  node_group { 'vRA Integration':
-    ensure               => 'present',
-    classes              => {'profile::vra_config' => {}},
-    environment          => 'production',
-    override_environment => false,
-    parent               => 'All Nodes',
-    rule                 => ['=', 'name', $facts['fqdn']],
-  }
+  #node_group { 'vRA Integration':
+  #  ensure               => 'present',
+  #  classes              => {'profile::vra_config' => {}},
+  #  environment          => 'production',
+  #  override_environment => false,
+  #  parent               => 'All Nodes',
+  #  rule                 => ['=', 'name', $facts['fqdn']],
+  #}
 
   node_group { 'Docker Server':
     ensure               => 'present',
