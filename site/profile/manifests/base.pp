@@ -1,7 +1,7 @@
 # @summary This profile configures /etc/hosts
 class profile::base {
 
-  $message = lookup('trusted_msg')
+  $message = lookup( { 'name' => 'trusted_msg', 'default_value' => 'empty' })
 
   if $trusted['extensions']['pp_role'] {
     $line  = "PS1='\$USER@${trusted['extensions']['pp_role']} \$PWD> '"
