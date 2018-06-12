@@ -3,9 +3,9 @@ Facter.add(:datacenter) do
     fqdn = Facter.value(:fqdn)
     case fqdn
     when /puppetlabs\.vm/i
-      "puppet"
+      'puppet'
     else
-      "external"
+      'external'
     end
   end
 end
