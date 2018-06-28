@@ -19,5 +19,8 @@ hierarchy:
   - name: "Per-Datacenter defaults"
     path: "datacenters/%{facts.datacenter}.yaml"
 
+  - name: "Common Env data"
+    path: "%{environment}/common.yaml"
+    
   - name: "Common data"
     path: "common.yaml"
