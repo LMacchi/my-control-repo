@@ -2,7 +2,7 @@
 class profile::base {
 
   class {'::puppet_agent':
-    package_version => '5.5.1',
+    package_version => '5.5.3',
   }
 
   if $trusted['extensions']['pp_role'] {
