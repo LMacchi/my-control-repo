@@ -20,10 +20,10 @@ hierarchy:
     path: "datacenters/%{facts.datacenter}.yaml"
 
   - name: 'Shared Data'
-    datadir: '/etc/puppetlabs/code/environments'
+    datadir: "/etc/puppetlabs/code/environments/data_%{environment}"
     paths:
-      - "data-%{environment}/datacenters/%{facts.datacenter}.yaml"
-      - "data-%{environment}/common.yaml"
+      - "/datacenters/%{facts.datacenter}.yaml"
+      - "common.yaml"
     
   - name: "Common data"
     path: "common.yaml"
