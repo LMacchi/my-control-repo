@@ -30,9 +30,6 @@ mod 'puppetlabs/java_ks', '2.2.0'
 mod 'puppetlabs-puppet_agent', '1.6.0'
 mod 'puppetlabs-transition', '0.1.1'
 
-mod 'mytasks',
-  :git => 'https://github.com/LMacchi/puppet_tasks.git'
-
 mod 'http_summary',
   :git    => 'https://github.com/LMacchi/http_summary.git'
 
