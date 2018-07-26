@@ -31,6 +31,9 @@ mod 'puppetlabs-puppet_agent', '1.6.0'
 mod 'puppetlabs-transition', '0.1.1'
 
 mod 'http_summary',
-  :git    => 'https://github.com/LMacchi/http_summary.git'
+  :git => 'https://github.com/LMacchi/http_summary.git'
+
+mod 'tasks',
+  :git => 'https://github.com/LMacchi/puppet_tasks.git'
 
 
