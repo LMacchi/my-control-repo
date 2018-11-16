@@ -12,3 +12,5 @@ puppet_enterprise::master::code_manager::sources:
   data:
     remote: "https://github.com/lmacchi/shared_data"
     prefix: true
+    ignore_branch_prefixes:
+      - test
